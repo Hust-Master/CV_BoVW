@@ -19,6 +19,7 @@ pip install torch torchvision scikit-learn numpy matplotlib tqdm joblib
 
 import time
 import os
+from pathlib import Path
 import numpy as np
 from tqdm import tqdm
 import joblib
@@ -265,4 +266,13 @@ def main():
     print("Total pipeline time: %.1f s" % (time.time() - start_total))
 
 if __name__ == "__main__":
+    directory_path = Path(CODEBOOK_PATH).parent
+    directory_path.mkdir(parents=True, exist_ok=True)
+    directory_path = Path(SVM_PATH).parent
+    directory_path.mkdir(parents=True, exist_ok=True)
+    directory_path = Path(HIST_CACHE_TRAIN).parent
+    directory_path.mkdir(parents=True, exist_ok=True)
+    directory_path = Path(HIST_CACHE_TEST).parent
+    directory_path.mkdir(parents=True, exist_ok=True)
+    
     main()
