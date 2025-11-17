@@ -294,3 +294,6 @@ if __name__ == "__main__":
     directory_path.mkdir(parents=True, exist_ok=True)
 
     main()
+    
+    # Uncomment to test on demo images
+    # test_demo()
